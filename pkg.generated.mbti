@@ -1,0 +1,73 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "horideicom/pbt"
+
+import(
+  "moonbitlang/core/quickcheck"
+  "moonbitlang/core/quickcheck/splitmix"
+)
+
+// Values
+pub fn[T : Show] check(Gen[T], (T) -> Result[Unit, String], config? : CheckConfig, shrink? : (T) -> Iter[T]) -> Result[Unit, Failure]
+
+pub fn decode_int_list(String) -> Result[Array[Int], String]
+
+pub fn encode_int_list(Array[Int]) -> String
+
+pub fn fib(Int) -> Int64
+
+pub fn[T] shrink_array(Array[T]) -> Iter[Array[T]]
+
+pub fn shrink_int(Int) -> Iter[Int]
+
+pub fn sum(data~ : Array[Int], start? : Int, length? : Int) -> Int
+
+// Errors
+
+// Types and methods
+pub struct CheckConfig {
+  cases : Int
+  max_size : Int
+  seed : UInt64
+  shrink_limit : Int
+}
+pub fn CheckConfig::new(Int, Int, UInt64, Int) -> Self
+pub impl Default for CheckConfig
+
+pub struct Failure {
+  case_index : Int
+  size : Int
+  seed : UInt64
+  message : String
+  original : String
+  shrunk : String?
+}
+pub impl Show for Failure
+
+pub struct Gen[T] {
+  run : (Int, @splitmix.RandomState) -> T
+}
+pub fn[T : @quickcheck.Arbitrary] Gen::arbitrary() -> Self[T]
+pub fn[T] Gen::array_of(Self[T]) -> Self[Array[T]]
+pub fn[A, B] Gen::bind(Self[A], (A) -> Self[B]) -> Self[B]
+pub fn Gen::choose_int(Int, Int) -> Self[Int]
+pub fn[T] Gen::frequency(Array[(Int, Self[T])]) -> Self[T]
+pub fn[A, B] Gen::map(Self[A], (A) -> B) -> Self[B]
+pub fn[T] Gen::one_of(Array[Self[T]]) -> Self[T]
+pub fn[T] Gen::pure(T) -> Self[T]
+pub fn[T] Gen::resize(Self[T], Int) -> Self[T]
+pub fn[T] Gen::sized((Int) -> Self[T]) -> Self[T]
+
+pub struct Stack {
+  data : Array[Int]
+}
+pub fn Stack::clear(Self) -> Unit
+pub fn Stack::new() -> Self
+pub fn Stack::pop(Self) -> Int?
+pub fn Stack::push(Self, Int) -> Unit
+pub fn Stack::size(Self) -> Int
+pub fn Stack::top(Self) -> Int?
+
+// Type aliases
+
+// Traits
+
