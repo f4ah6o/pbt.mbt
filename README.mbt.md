@@ -1,4 +1,4 @@
-# horideicom/pbt
+# f4ah6o/pbt
 
 Property-based testing examples for MoonBit using `@quickcheck` with a small
 local harness.
@@ -17,6 +17,7 @@ moon test
 ## README examples (tested)
 
 ```mbt check
+
 ///|
 test "readme codec roundtrip" {
   let gen = Gen::array_of(Gen::choose_int(-10, 10))
@@ -38,6 +39,7 @@ test "readme codec roundtrip" {
 ```
 
 ```mbt check
+
 ///|
 test "readme stack commands" {
   let cmds : Array[Command] = [Push(1), Push(2), Top, Pop, Size, Clear]
@@ -49,6 +51,7 @@ test "readme stack commands" {
 ### Gen::sized
 
 ```mbt check
+
 ///|
 test "readme gen sized" {
   let gen = Gen::sized(fn(size) { Gen::pure(size) })
@@ -63,6 +66,7 @@ test "readme gen sized" {
 ### Gen::frequency
 
 ```mbt check
+
 ///|
 test "readme gen frequency" {
   let gen = Gen::frequency([(0, Gen::pure("skip")), (1, Gen::pure("keep"))])

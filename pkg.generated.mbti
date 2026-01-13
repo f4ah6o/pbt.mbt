@@ -1,5 +1,5 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "horideicom/pbt"
+package "f4ah6o/pbt"
 
 import(
   "moonbitlang/core/quickcheck"
@@ -70,4 +70,3 @@ pub fn Stack::top(Self) -> Int?
 // Type aliases
 
 // Traits
-

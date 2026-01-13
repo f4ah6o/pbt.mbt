@@ -2,7 +2,7 @@
   "is-main": true,
   "import": [
     {
-      "path": "horideicom/pbt",
+      "path": "f4ah6o/pbt",
       "alias": "lib"
     }
   ]

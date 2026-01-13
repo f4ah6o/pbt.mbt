@@ -1,5 +1,5 @@
 {
-  "name": "horideicom/pbt",
+  "name": "f4ah6o/pbt",
   "version": "0.1.0",
   "deps": {
     "moonbitlang/quickcheck": "0.9.9"
@@ -9,5 +9,5 @@
   "license": "",
   "keywords": [],
   "description": "",
-  "source": "src,refs"
+  "source": "src"
 }
