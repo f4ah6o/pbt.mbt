@@ -1,0 +1,6 @@
+{
+  "name": "f4ah6o/code",
+  "deps": {
+    "moonbitlang/quickcheck": "0.9.9"
+  }
+}
